@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.unitconverter.MainActivity">
+
+    <TextView
+        android:id="@+id/source_unit_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Source Unit"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <Spinner
+        android:id="@+id/source_unit_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/source_unit_textview"
+        android:layout_alignBaseline="@+id/source_unit_textview"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/destination_unit_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination Unit"
+        android:layout_below="@+id/source_unit_textview"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <Spinner
+        android:id="@+id/destination_unit_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/destination_unit_textview"
+        android:layout_alignBaseline="@+id/destination_unit_textview"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/input_value_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input Value"
+        android:layout_below="@+id/destination_unit_textview"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <EditText
+        android:id="@+id/input_value_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/input_value_textview"
+        android:layout_alignBaseline="@+id/input_value_textview"
+        android:layout_marginLeft="10dp"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/convert_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convert"
+        android:layout_below="@+id/input_value_textview"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/result_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:layout_below="@+id/convert_button"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp" />
+
+</RelativeLayout>
