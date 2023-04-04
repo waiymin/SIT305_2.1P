@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText valueEditText;
     private TextView resultTextView;
 
-    private final String[] lengthUnits = {"In", "Ft", "Yd", "Mi", "Cm", "Km"};
+    private final String[] lengthUnits = {"In", "Ft", "Yd", "Mi", "Cm", "Km", "Lb", "Kg", "Oz", "G", "T", "C", "F", "K"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
     private double convert(String sourceUnit, String destUnit, double value) {
         double sourceValueInCm = 0;
+        double sourceValueInG = 0;
+        double sourceValueInC = 0;
 
         switch (sourceUnit) {
             case "In":
@@ -94,6 +96,31 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "Km":
                 sourceValueInCm = value * 100000;
+                break;
+            case "G":
+                sourceValueInG = value;
+                break;
+            case "Lb":
+                sourceValueInG = value * 453.59;
+                break;
+            case "Kg":
+                sourceValueInG = value * 1000;
+                break;
+            case "Oz":
+                sourceValueInG = value * 28.35;
+                break;
+            case "T":
+                sourceValueInG = value * 907185;
+                break;
+            case "C":
+                sourceValueInC = value;
+                break;
+            case "F":
+                sourceValueInC = (value - 32) / 1.8;
+                break;
+            case "K":
+                sourceValueInC = value - 273.15;
+                break;
         }
 
         double result = 0;
@@ -116,6 +143,30 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "Km":
                 result = sourceValueInCm/100000;
+                break;
+            case "Lb":
+                result = sourceValueInG/453.59;
+                break;
+            case "G":
+                result = sourceValueInG;
+                break;
+            case "Oz":
+                result = sourceValueInG / 28.35;
+                break;
+            case "Kg":
+                result = sourceValueInG / 1000;
+                break;
+            case "T":
+                result = sourceValueInG / 907185;
+                break;
+            case "C":
+                result = sourceValueInC;
+                break;
+            case "F":
+                result = (sourceValueInC * 1.8) + 32;
+                break;
+            case "K":
+                result =sourceValueInC + 273.15;
                 break;
         }
 
